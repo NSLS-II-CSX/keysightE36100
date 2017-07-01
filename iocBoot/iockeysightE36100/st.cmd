@@ -8,7 +8,7 @@
 cd ${TOP}
 
 ## Register all support components
-dbLoadDatabase("../../dbd/keysightE36100.dbd",0,0)
+dbLoadDatabase("dbd/keysightE36100.dbd",0,0)
 keysightE36100_registerRecordDeviceDriver(pdbbase) 
 
 epicsEnvSet("EPICS_CA_AUTO_ADDR_LIST" , "NO")
