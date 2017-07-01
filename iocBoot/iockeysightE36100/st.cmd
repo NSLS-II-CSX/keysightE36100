@@ -16,13 +16,13 @@ epicsEnvSet("EPICS_CA_ADDR_LIST"      , "10.23.0.255")
 epicsEnvSet("STREAM_PROTOCOL_PATH"    , "$(TOP)/protocols")
 
 drvAsynIPPortConfigure("KS1", "10.23.3.60:5025")
-asynSetTraceMask("KS1", 0, 0x9)
-asynSetTraceIOMask("KS1", 0, 0x2)
+#asynSetTraceMask("KS1", 0, 0x9)
+#asynSetTraceIOMask("KS1", 0, 0x2)
 
 ## Load record instances
-#dbLoadRecords("db/keysightE36100.db","user=swilkins")
+dbLoadRecords("db/keysightE36100.db","Sys=XF:23ID1-ES,Dev={FCCD-PSU:FO},PORT=KS1")
 
-asSetFilename("/epics/xf/23id/xf23id.acf")
+#asSetFilename("/epics/xf/23id/xf23id.acf")
 
 system("install -m 777 -d $(TOP)/as/save") 
 system("install -m 777 -d $(TOP)/as/req")

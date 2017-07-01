@@ -1,0 +1,23 @@
+record(ai, "$(Sys)$(Dev)E-I"){
+	field(DTYP, "stream")
+	field(INP,  "@keysightE36100.proto readVoltage() $(PORT)")
+	field(SCAN, "1 second")
+	field(EGU,  "Volt")
+}
+
+record(ai, "$(Sys)$(Dev)I-I"){
+	field(DTYP, "stream")
+	field(INP,  "@keysightE36100.proto readCurrent() $(PORT)")
+	field(SCAN, "1 second")
+	field(EGU,  "Amps")
+}
+
+record(bo, "$(Sys)$(Dev)Cmd:On-Cmd"){
+	field(DTYP, "stream")
+	field(OUT,  "@keysightE36100.proto setOn() $(PORT)")
+}
+
+record(bo, "$(Sys)$(Dev)Cmd:Off-Cmd"){
+	field(DTYP, "stream")
+	field(OUT,  "@keysightE36100.proto setOff() $(PORT)")
+}

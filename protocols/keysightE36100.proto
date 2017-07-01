@@ -1,0 +1,23 @@
+Terminator = LF;
+ReadTimeout = 10000;
+
+readCurrent {
+	out "MEAS:CURR?";
+	in "%+E%*s";
+}
+
+readVoltage {
+	out "MEAS:VOLT?";
+	in "%+E%*s";
+}
+
+setOn {
+	out "SOUR:VOLT:PROT 5.000";
+	out "SOUR:VOLT 4.5";
+	out "SOUR:CURR 4.8";
+	out "OUTP 1";
+}
+
+setOff {
+	out "OUTP 0";
+}
