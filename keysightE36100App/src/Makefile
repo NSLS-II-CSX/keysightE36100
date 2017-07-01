@@ -16,10 +16,21 @@ DBD += keysightE36100.dbd
 keysightE36100_DBD += base.dbd
 
 # Include dbd files from all support applications:
-#keysightE36100_DBD += xxx.dbd
+keysightE36100_DBD += caPutLog.dbd
+keysightE36100_DBD += asyn.dbd
+keysightE36100_DBD += stream.dbd
+keysightE36100_DBD += drvAsynIPPort.dbd
+keysightE36100_DBD += drvAsynSerialPort.dbd
+keysightE36100_DBD += system.dbd
+keysightE36100_DBD += asSupport.dbd
+keysightE36100_DBD += devIocStats.dbd
 
 # Add all the support libraries needed by this IOC
-#keysightE36100_LIBS += xxx
+keysightE36100_LIBS += caPutLog
+keysightE36100_LIBS += stream
+keysightE36100_LIBS += asyn
+keysightE36100_LIBS += devIocStats
+keysightE36100_LIBS += autosave
 
 # keysightE36100_registerRecordDeviceDriver.cpp derives from keysightE36100.dbd
 keysightE36100_SRCS += keysightE36100_registerRecordDeviceDriver.cpp
