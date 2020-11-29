@@ -1,0 +1,4 @@
+NAME=es-keysight
+PORT=5015
+HOST=xf23id1-ioc2
+USER=softioc

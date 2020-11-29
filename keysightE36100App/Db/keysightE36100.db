@@ -21,3 +21,11 @@ record(bo, "$(Sys)$(Dev)Cmd:Off-Cmd"){
 	field(DTYP, "stream")
 	field(OUT,  "@keysightE36100.proto setOff() $(PORT)")
 }
+
+record(bi, "$(Sys)$(Dev)Pwr-Sts"){
+	field(DTYP, "stream")
+	field(INP,  "@keysightE36100.proto readOnOff() $(PORT)")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(SCAN, "1 second")
+}

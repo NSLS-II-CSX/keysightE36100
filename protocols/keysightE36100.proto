@@ -12,12 +12,28 @@ readVoltage {
 }
 
 setOn {
-	out "SOUR:VOLT:PROT 5.000";
-	out "SOUR:VOLT 4.5";
+	out "SYST:RWL";
+	out "SOUR:VOLT:PROT 6.000";
+	out "SOUR:CURR:PROT 4.000";
+	out "SOUR:VOLT:PROT:STAT 0";
+	out "SOUR:CURR:PROT:STAT 0";
+	out "SOUR:VOLT:PROT:SENS:SOUR EXT";
+	out "SOUR:VOLT 3.75";
 	out "SOUR:CURR 4.8";
 	out "OUTP 1";
 }
 
 setOff {
 	out "OUTP 0";
+}
+
+readOnOff {
+	out "OUTP?";
+	in  "%d";
+}
+
+resetProt {
+	out "SOUR:CURR:PROT:CLE";
+	out "SOUR:VOLT:PROT:CLE";
+	out "OUTP:PROT:CLE";
 }
