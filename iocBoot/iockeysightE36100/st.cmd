@@ -4,6 +4,7 @@
 ## everywhere it appears in this file
 
 < envPaths
+< /epics/common/xf23id1-ioc2-netsetup.cmd
 
 cd ${TOP}
 
@@ -11,11 +12,9 @@ cd ${TOP}
 dbLoadDatabase("dbd/keysightE36100.dbd",0,0)
 keysightE36100_registerRecordDeviceDriver(pdbbase) 
 
-epicsEnvSet("EPICS_CA_AUTO_ADDR_LIST" , "NO")
-epicsEnvSet("EPICS_CA_ADDR_LIST"      , "10.23.0.255")
 epicsEnvSet("STREAM_PROTOCOL_PATH"    , "$(TOP)/protocols")
 
-drvAsynIPPortConfigure("KS1", "10.23.3.60:5025")
+drvAsynIPPortConfigure("KS1", "xf23id1-dvm1.nsls2.bnl.local:5025")
 #asynSetTraceMask("KS1", 0, 0x9)
 #asynSetTraceIOMask("KS1", 0, 0x2)
 
